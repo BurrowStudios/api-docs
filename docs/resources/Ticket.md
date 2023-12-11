@@ -1,3 +1,9 @@
+[http-get]: https://img.shields.io/badge/GET-505CDC
+[http-post]: https://img.shields.io/badge/POST-23A559
+[http-put]: https://img.shields.io/badge/PUT-AC5A1F
+[http-delete]: https://img.shields.io/badge/DELETE-A12828
+[http-patch]: https://img.shields.io/badge/PATCH-AF7615
+
 # Ticket resource
 
 ## Ticket object
@@ -21,3 +27,29 @@
 | FROZEN   | Ticket cannot be resolved at the time                 |
 | CLOSED   | Ticket has been abandoned                             |
 | DRAFT    | Ticket is not yet open                                |
+
+## List ticket ids</br>![http-get] /tickets
+Returns a list of all known ticket ids.
+
+## Get ticket</br>![http-get] /tickets/[{ticket.id}](#ticket-object)
+Returns a single [ticket object](#ticket-object).
+
+## ![http-post] /tickets
+Create a new ticket.
+Returns the new [ticket object](#ticket-object) on success.
+
+## Add ticket user</br>![http-put] /tickets/[{ticket.id}](#ticket-object)/users/[{user.id}](User.md#user-object)
+Adds a user to a ticket.
+Returns `204 No Content` on success.
+
+## Remove ticket user</br>![http-delete] /tickets/[{ticket.id}](#ticket-object)/users/[{user.id}](User.md#user-object)
+Removes a user from a ticket.
+Returns `204 No Content` on success.
+
+## Delete group</br>![http-delete] /tickets/[{ticket.id}](#ticket-object)
+Permanently delete a ticket, identified by its id.
+Returns `204 No Content` on success.
+
+## ![http-patch] /tickets/[{ticket.id}](#ticket-object)
+Modify a ticket, identified by its id.
+Returns the modified [ticket object](#ticket-object) on success.

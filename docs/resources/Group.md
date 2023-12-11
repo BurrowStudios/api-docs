@@ -1,3 +1,9 @@
+[http-get]: https://img.shields.io/badge/GET-505CDC
+[http-post]: https://img.shields.io/badge/POST-23A559
+[http-put]: https://img.shields.io/badge/PUT-AC5A1F
+[http-delete]: https://img.shields.io/badge/DELETE-A12828
+[http-patch]: https://img.shields.io/badge/PATCH-AF7615
+
 # Group resource
 
 ## Group object
@@ -11,3 +17,29 @@
 | size     | integer                      | Amount of members in this group       |
 | members  | array of [user](User.md) ids | Users that are a member of this group |
 | position | integer                      | Position of this group in group lists |
+
+## List group ids</br>![http-get] /groups
+Returns a list of all known group ids.
+
+## Get group</br>![http-get] /groups/[{group.id}](#group-object)
+Returns a single [group object](#group-object).
+
+## ![http-post] /groups
+Create a new group.
+Returns the new [group object](#group-object) on success.
+
+## Add group member</br>![http-put] /groups/[{group.id}](#group-object)/members/[{user.id}](User.md#user-object)
+Adds a user to a group.
+Returns `204 No Content` on success.
+
+## Remove group member</br>![http-delete] /groups/[{group.id}](#group-object)/members/[{user.id}](User.md#user-object)
+Removes a user from a group.
+Returns `204 No Content` on success.
+
+## Delete group</br>![http-delete] /groups/[{group.id}](#group-object)
+Permanently delete a group, identified by its id.
+Returns `204 No Content` on success.
+
+## ![http-patch] /groups/[{group.id}](#group-object)
+Modify a group, identified by its id.
+Returns the modified [group object](#group-object) on success.
