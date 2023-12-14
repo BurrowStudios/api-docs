@@ -2,7 +2,8 @@
 This repository documents the Burrow Studios API Gateway.
 
 ## Architecture
-This is the current plan for our general architecture:
+This documentation only describes the interface layer and its endpoints.
+Our current plan for the architecture of our entire system looks something like this:
 
 ![Project architecture](res/architecture.png)
 
