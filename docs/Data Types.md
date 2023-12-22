@@ -17,5 +17,8 @@ are mentioned in these descriptions:
 | array of X | Zero or more (unless specified otherwise in the field description) elements of X                              |
 | one of X   | Meaning X is an enumeration that should be linked in the docs                                                 |
 
-#### Optional Data Types
-If a data type is prefixed by a `?` it means that the field is optional, i.e. its content may be `null`.
+#### Optional Fields
+If a field is prefixed by a `?` it means that the field is optional.
+
+#### Nullable Fields
+If a field is suffixed by a `?` it means that the field may be `null`.
